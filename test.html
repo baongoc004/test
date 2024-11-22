@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        :root{
+            --bg-black-900: #ab4b1b;
+            --bg-black-900: #43d541;
+            --bg-black-900: #8686ad;
+            --text-black-900: #28ae74;
+            --text-black-700: #d51e1e;
+        }
+        body{
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        ::before,::after{
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        .slide{
+            width: 270px;
+            background: rgb(181, 181, 181);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            height: 100%;
+            border-right: 2px solid var(--text-black-900);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: all 0.3s ease ;
+            user-select: none;
+        }
+        .slide .ten{
+            position: absolute;
+            top: 50px;
+            font-size: 30px;
+            text-transform: capitalize;
+            color: aqua;
+            font-weight: 700;
+            padding: 15px 20px;
+            letter-spacing: 5px;
+            /* position: relative; */
+        }
+        
+        .slide .ten::before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-bottom: 5px solid var(--text-black-700);
+            border-left: 5px solid var(--text-black-700);
+            bottom: 0;
+            left: 0;
+        }
+        .slide .ten::after{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-top: 5px solid var(--text-black-700);
+            border-right: 5px solid var(--text-black-700);
+            top: 0;
+            right: 0;
+        }
+        .slide .nav-to{
+            height: 40px;
+            width: 45px;
+            border: 2px solid rosybrown;
+            cursor: pointer;
+            position: fixed;
+            left: 300px;
+            top: 20px;
+            border-radius: 5px;
+            background: #28ae74;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transform: all 0.3s ease;
+        }
+        .slide .nav-to span{
+            height: 2px;
+            width: 18px;
+            background: red;
+            position: relative;
+            display: inline-block;
+        }
+        .slide .nav-to.open span{
+            background-color: transparent;
+        }
+        .slide .nav-to span::before{
+            contain: '';
+            height: 2px;
+            width: 18px;
+            background: rgb(19, 168, 34);
+            position: absolute;
+            top: -6px;
+            left: 0;
+        }
+        .slide .nav-to span::after{
+            contain: '';
+            height: 2px;
+            width: 18px;
+            background: rgb(52, 177, 17);
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+        .slide .nav{
+            margin-top: 50px;
+        }
+        .slide .nav li{
+            margin-bottom: 20px;
+            display: block;
+        }
+        .slide .nav li a{
+            font-size: 16px;
+            font-weight: 600;
+            display: block;
+            border-bottom: 1px solid bisque;
+            color: black;
+            padding: 5px 15px;
+        }
+        /* .slide .nav li a.active{
+            color: black;
+        } */
+        .slide .nav li a i{
+            margin-right: 15px;
+        }
+        .section{
+            min-height: 100vh;
+            display: block;
+            padding: 0 30px;
+            opacity: 1;
+            position: fixed;
+            top: 0;
+            left: 270px;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        .container{
+            max-width: 1100px;
+            width: 100%;
+            margin: auto;
+        }
+        .section .container{
+            padding-top: 60px;
+            padding-bottom: 70px;
+        }
+        .row{
+            display: flex;
+            flex: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-contaier">
+        <div class="slide">
+            <div class="ten">
+                <b>B.Ngọc</b>
+            </div>
+            <!-- <div class="logo">
+                <a href="/"><span>B</span>.Ngoc</a>
+            </div> -->
+            <div class="nav-to">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="#home" class="active"><i><i class="fa fa-home"></i> </i>Home</a>
+                </li>
+                <li>
+                    <a href="#about"><i><i class="fa fa-user"></i></i>About</a>
+                </li>
+                <li>
+                    <a href="#interest"><i><i class="fa fa-list-check"></i></i>Interest</a>
+                </li>
+                <li>
+                    <a href="#social"><i><i class="fa fa-globe"></i></i>Social</a>
+                </li>
+                <li>
+                    <a href="#contact"><i><i class="fa fa-comments"></i></i>Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <section class="home section active" id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="home-infor">
+                        <h3 class="hello">Xin chào, tôi tên là <span class="name>">Bảo Ngọc</span></h3>
+                        <h3 class="hello"> Tôi là  một web designer</h3>
+                        <p>Tôi yêu thích công nghệ và đam mê việc tạo ra những sản phẩm phần mềm hữu ích giúp giải quyết các vấn đề trong cuộc sống.
+                            Từ những ngày đầu làm quen với máy tính, tôi đã luôn tò mò về cách các ứng dụng hoạt động và 
+                            điều đó đã dẫn dắt tôi bước vào con đường lập trình.</p>
+                    </div>
+                    <div class="home-img">
+                        <img src="/images/11.jpg" alt="avt">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
